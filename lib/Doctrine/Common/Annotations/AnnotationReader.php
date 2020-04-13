@@ -21,9 +21,9 @@ namespace Doctrine\Common\Annotations;
 
 use Doctrine\Common\Annotations\Annotation\IgnoreAnnotation;
 use Doctrine\Common\Annotations\Annotation\Target;
-use ReflectionClass;
-use ReflectionMethod;
-use ReflectionProperty;
+use Roave\BetterReflection\Reflection\ReflectionClass;
+use Roave\BetterReflection\Reflection\ReflectionMethod;
+use Roave\BetterReflection\Reflection\ReflectionProperty;
 
 /**
  * A reader for docblock annotations.
@@ -394,7 +394,7 @@ class AnnotationReader implements Reader
     private function collectParsingMetadata(ReflectionClass $class)
     {
         $ignoredAnnotationNames = self::$globalIgnoredNames;
-        $annotations            = $this->preParser->parse($class->getDocComment(), 'class ' . $class->name);
+        $annotations            = $this->preParser->parse($class->getDocComment(), 'class ' . $class->getName());
 
         foreach ($annotations as $annotation) {
             if ($annotation instanceof IgnoreAnnotation) {
