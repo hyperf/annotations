@@ -19,6 +19,7 @@
 
 namespace Doctrine\Common\Annotations;
 
+use Roave\BetterReflection\Reflection\ReflectionClass;
 use SplFileObject;
 
 /**
@@ -36,7 +37,7 @@ final class PhpParser
      *
      * @return array A list with use statements in the form (Alias => FQN).
      */
-    public function parseClass(\ReflectionClass $class)
+    public function parseClass(ReflectionClass $class)
     {
         if (method_exists($class, 'getUseStatements')) {
             return $class->getUseStatements();
