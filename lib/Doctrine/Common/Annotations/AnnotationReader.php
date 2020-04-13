@@ -34,7 +34,7 @@ use Roave\BetterReflection\Reflection\ReflectionProperty;
  * @author  Roman Borschel <roman@code-factory.org>
  * @author  Johannes M. Schmitt <schmittjoh@gmail.com>
  */
-class AnnotationReader implements Reader
+class AnnotationReader
 {
     /**
      * Global map for imports.
